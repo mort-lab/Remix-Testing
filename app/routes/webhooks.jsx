@@ -25,6 +25,7 @@ export const action = async ({ request }) => {
         createSubscriptionMetafield(admin.graphql, "false");
       }
       break;
+
     case "CUSTOMERS_DATA_REQUEST":
     case "CUSTOMERS_REDACT":
     case "SHOP_REDACT":

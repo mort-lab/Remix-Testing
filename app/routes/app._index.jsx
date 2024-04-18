@@ -2,7 +2,6 @@ import { useLoaderData } from "@remix-run/react";
 import { Page, Layout, Text, BlockStack, InlineGrid } from "@shopify/polaris";
 import { apiVersion, authenticate } from "../shopify.server";
 import { MediaCardExample } from "../components/MediaCardExample";
-
 export const query = `
 {
   products(first: 6) {

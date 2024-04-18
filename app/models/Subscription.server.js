@@ -59,7 +59,7 @@ export async function createSubscriptionMetafield(graphql, value) {
     {
       variables: {
         metafields: {
-          namespace: "mtappsremixbillingdemo",
+          namespace: "martinAppMetafield",
           key: "hasPlan",
           type: "boolean",
           value: value,
@@ -70,6 +70,5 @@ export async function createSubscriptionMetafield(graphql, value) {
   );
 
   const data = await appMetafield.json();
-
-  return data;
+  return;
 }

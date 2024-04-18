@@ -27,7 +27,18 @@ export const loader = async ({ request }) => {
   const { activeSubscriptions } = subscriptions.data.app.installation;
 
   if (activeSubscriptions) {
-    if (activeSubscriptions.status === "ACTIVE") {
+    let status;
+
+    // Comprueba si activeSubscriptions es un array
+    if (Array.isArray(activeSubscriptions)) {
+      // Usa el primer elemento del array
+      status = activeSubscriptions[0]?.status;
+    } else {
+      // Usa el objeto directamente
+      status = activeSubscriptions.status;
+    }
+
+    if (status === "ACTIVE") {
       await createSubscriptionMetafield(admin.graphql, "true");
     } else {
       await createSubscriptionMetafield(admin.graphql, "false");
@@ -70,7 +81,7 @@ export const action = async ({ request }) => {
       plans: [PLAN],
       isTest: isTest,
       onFailure: async () => billing.request({ plan: PLAN, isTest: isTest }),
-      returnUrl: `https://${shop}/admin/apps/remix-testing-3/app/mysections`,
+      returnUrl: `https://admin.shopify.com/store/${shop}/apps/remix-testing-3/app/mysections`,
     });
   }
 

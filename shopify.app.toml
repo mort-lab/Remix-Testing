@@ -3,7 +3,7 @@
 client_id = "6a135d72f846586cff7ef3fe0f9b927d"
 name = "remix-testing"
 handle = "remix-testing-3"
-application_url = "https://cosmetic-with-laden-york.trycloudflare.com"
+application_url = "https://each-ease-exclusively-bags.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_product_listings,write_products"
 
 [auth]
 redirect_urls = [
-  "https://cosmetic-with-laden-york.trycloudflare.com/auth/callback",
-  "https://cosmetic-with-laden-york.trycloudflare.com/auth/shopify/callback",
-  "https://cosmetic-with-laden-york.trycloudflare.com/api/auth/callback"
+  "https://each-ease-exclusively-bags.trycloudflare.com/auth/callback",
+  "https://each-ease-exclusively-bags.trycloudflare.com/auth/shopify/callback",
+  "https://each-ease-exclusively-bags.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
