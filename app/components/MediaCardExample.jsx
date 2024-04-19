@@ -13,7 +13,51 @@ import {
 import React, { useState, useCallback } from "react";
 import { PlusIcon, CartFilledIcon, ViewIcon } from "@shopify/polaris-icons";
 
-export function MediaCardExample({ product }) {
+const createOneTimePurchase = async (
+  admin,
+  name,
+  price,
+  returnUrl,
+  test = false,
+) => {
+  const query = `
+    mutation appPurchaseOneTimeCreate($name: String!, $price: MoneyInput!, $returnUrl: URL!, $test: Boolean!) {
+      appPurchaseOneTimeCreate(name: $name, price: $price, returnUrl: $returnUrl, test: $test) {
+        appPurchaseOneTime {
+          id
+        }
+        confirmationUrl
+        userErrors {
+          field
+          message
+        }
+      }
+    }
+  `;
+
+  const variables = {
+    name,
+    price: {
+      amount: price,
+      currencyCode: "USD",
+    },
+    returnUrl,
+    test,
+  };
+
+  const response = await admin.graphql(query, variables);
+
+  if (response.userErrors.length > 0) {
+    console.error("Error creating one-time purchase:", response.userErrors);
+  } else {
+    console.log(
+      "One-time purchase created, confirmation URL:",
+      response.confirmationUrl,
+    );
+  }
+};
+
+export function MediaCardExample({ product, admin }) {
   const [modalActive, setModalActive] = useState(false);
 
   const toggleModal = useCallback(
@@ -129,6 +173,14 @@ export function MediaCardExample({ product }) {
                       size="large"
                       fullWidth={true}
                       icon={CartFilledIcon}
+                      onClick={() =>
+                        createOneTimePurchase(
+                          admin,
+                          product.title,
+                          product.price,
+                          "/app/pricing",
+                        )
+                      }
                     >
                       Buy Unique Component
                     </Button>

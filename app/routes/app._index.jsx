@@ -2,9 +2,10 @@ import { useLoaderData } from "@remix-run/react";
 import { Page, Layout, Text, BlockStack, InlineGrid } from "@shopify/polaris";
 import { apiVersion, authenticate } from "../shopify.server";
 import { MediaCardExample } from "../components/MediaCardExample";
+
 export const query = `
 {
-  products(first: 6) {
+  products(first: 4) {
     edges {
       node {
         id
@@ -61,9 +62,14 @@ export const loader = async ({ request }) => {
   } catch (error) {
     console.log(error);
   }
+  return {
+    props: {
+      session: session,
+    },
+  };
 };
 
-export default function Index() {
+export default function Index({ session }) {
   const products = useLoaderData();
 
   return (
@@ -89,6 +95,7 @@ export default function Index() {
                     }}
                   >
                     <MediaCardExample
+                      admin={session}
                       product={{
                         title: product.title,
                         description: product.description,

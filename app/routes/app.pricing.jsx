@@ -107,6 +107,7 @@ const Pricing = () => {
           <Text variant="heading2xl" as="h2">
             Pricing
           </Text>
+
           <InlineGrid gap="400" columns={3}>
             {/* Annual Plan */}
             <Card roundedAbove="sm">
@@ -121,7 +122,7 @@ const Pricing = () => {
                     fontWeight="medium"
                     alignment="center"
                   >
-                    Benefits
+                    79.95$
                   </Text>
                   <List>
                     <List>
@@ -185,7 +186,7 @@ const Pricing = () => {
                     fontWeight="medium"
                     alignment="center"
                   >
-                    Benefits
+                    9.95$
                   </Text>
                   <List>
                     <List>
