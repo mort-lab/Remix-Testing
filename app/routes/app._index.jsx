@@ -101,6 +101,7 @@ export default function Index({ session }) {
                         description: product.description,
                         imageSrc, // Usa la URL de la imagen aquí.
                         tags: product.tags,
+                        id: product.id,
                       }}
                     />
                   </div>

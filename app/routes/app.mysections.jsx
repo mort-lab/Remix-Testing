@@ -1,13 +1,15 @@
 import {
   LegacyCard,
-  EmptyState,
-  Link,
   Page,
   Text,
   Layout,
   BlockStack,
+  InlineGrid,
+  EmptyState,
+  Link,
 } from "@shopify/polaris";
 import React from "react";
+import MySectionsComponent from "../components/MySectionsComponent";
 
 const MySections = () => {
   return (
@@ -18,7 +20,7 @@ const MySections = () => {
             My Sections
           </Text>
           <LegacyCard sectioned>
-            <EmptyState
+            {/* <EmptyState
               heading="Here all the products you have purchased will be displayed."
               action={{ content: "See All Components", url: "/app" }}
               footerContent={
@@ -32,7 +34,16 @@ const MySections = () => {
                 </p>
               }
               image="https://cdn.shopify.com/s/files/1/0262/4071/2726/files/emptystate-files.png"
-            ></EmptyState>
+            ></EmptyState> */}
+            <BlockStack gap="400">
+              <InlineGrid gap="400" columns={4}>
+                <MySectionsComponent />
+                <MySectionsComponent />
+                <MySectionsComponent />
+                <MySectionsComponent />
+                <MySectionsComponent />
+              </InlineGrid>
+            </BlockStack>
           </LegacyCard>
         </BlockStack>
       </Layout.Section>

@@ -81,7 +81,7 @@ export const action = async ({ request }) => {
       plans: [PLAN],
       isTest: isTest,
       onFailure: async () => billing.request({ plan: PLAN, isTest: isTest }),
-      returnUrl: `https://admin.shopify.com/store/${shop}/apps/remix-testing-3/app/mysections`,
+      returnUrl: "/app/mysections",
     });
   }
 

@@ -26,10 +26,6 @@ export const action = async ({ request }) => {
       }
       break;
 
-    case "APP_PURCHASES_ONE_TIME_UPDATE":
-      // Aquí puedes manejar el evento de actualización de compra única
-      console.log("One-time app purchase updated + payload:", payload);
-      break;
     case "CUSTOMERS_DATA_REQUEST":
     case "CUSTOMERS_REDACT":
     case "SHOP_REDACT":
