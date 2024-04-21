@@ -1,5 +1,132 @@
-<div style="background: red; color: white; padding: 5px">
-  <h1>Conditional Extension</h1>
+<style>
+  .brix---top-bar-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-right: 72px;
+    padding-left: 72px;
+    background-color: #ffff2f;
+    font-family: system-ui;
+    color: black;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+  }
+
+  .brix---top-bar-wrapper:medium {
+    padding-right: 56px;
+    padding-left: 56px;
+  }
+
+  .brix---top-bar-wrapper:small {
+    padding-right: 36px;
+    padding-left: 36px;
+  }
+
+  .brix---top-bar-wrapper:tiny {
+    padding-right: 12px;
+    padding-left: 12px;
+    font-size: 17px;
+    line-height: 26px;
+  }
+
+  .brix---top-bar-padding {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .brix---top-bar-padding:medium {
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+
+  .brix---container-default {
+    max-width: 1218px;
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .brix---container-default:tiny {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .brix---top-bar-close-icon {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    display: flex;
+    padding-top: 20px;
+    padding-right: 32px;
+    padding-bottom: 20px;
+    padding-left: 32px;
+    align-items: center;
+    transition-property: opacity;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
+    cursor: pointer;
+  }
+
+  .brix---top-bar-close-icon:medium {
+    padding-top: 18px;
+    padding-right: 24px;
+    padding-bottom: 18px;
+    padding-left: 24px;
+  }
+
+  .brix---top-bar-close-icon:tiny {
+    padding-right: 8px;
+    padding-left: 12px;
+  }
+
+  .brix---top-bar-close-icon:small {
+    padding-right: 16px;
+    padding-left: 16px;
+    align-items: flex-start;
+  }
+
+  .brix---top-bar-close-icon {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    display: flex;
+    padding-top: 20px;
+    padding-right: 32px;
+    padding-bottom: 20px;
+    padding-left: 32px;
+    align-items: center;
+    transition-property: opacity;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
+    cursor: pointer;
+  }
+
+  .brix---top-bar-close-icon:medium {
+    padding-top: 18px;
+    padding-right: 24px;
+    padding-bottom: 18px;
+    padding-left: 24px;
+  }
+
+  .brix---top-bar-close-icon:tiny {
+    padding-right: 8px;
+    padding-left: 12px;
+  }
+
+  .brix---top-bar-close-icon:small {
+    padding-right: 16px;
+    padding-left: 16px;
+    align-items: flex-start;
+  }
+</style>
+
+<div class="brix---top-bar-wrapper">
+  <div class="brix---top-bar-padding">
+    <div class="brix---container-default">HOLA</div>
+    <div class="brix---top-bar-close-icon">X</div>
+  </div>
 </div>
 
 {% schema %}
