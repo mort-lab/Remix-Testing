@@ -3,12 +3,13 @@
     <div class="mb-14 text-center">
       <span
         class="py-1 px-4 bg-indigo-100 rounded-full text-xs font-medium text-indigo-600 text-center"
-        >Features</span
       >
-      <h2 class="text-4xl text-center font-bold text-gray-900 py-5">Revolutionary Features</h2>
+        Features
+      </span>
+
+      <h2 class="text-4xl text-center font-bold text-gray-900 py-5">{{ block.settings.my_header }}</h2>
       <p class="text-lg font-normal text-gray-500 max-w-md md:max-w-2xl mx-auto">
-        Provides advanced features like time tracking, integrating with third party apps (calendar / Google drive),
-        creating subtasks.
+        {{ block.settings.my_description }}
       </p>
     </div>
     <div
@@ -111,6 +112,19 @@
   "target": "section",
   "available_if": "{{ app.metafields.martinAppMetafield.hasPlan }}",
   "stylesheet": "style.css",
-  "settings": []
+  "settings": [
+    {
+      "type": "text",
+      "id": "my_header",
+      "label": "Title Text",
+      "default": "Revolutionary Features"
+    },
+    {
+      "type": "text",
+      "id": "my_description",
+      "label": "Description Text",
+      "default": "Provides advanced features like time tracking, integrating with third party apps calendar / Google drive, creating subtasks."
+    }
+  ]
 }
 {% endschema %}
