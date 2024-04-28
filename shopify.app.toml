@@ -3,7 +3,7 @@
 client_id = "6a135d72f846586cff7ef3fe0f9b927d"
 name = "remix-testing"
 handle = "remix-testing-3"
-application_url = "https://buck-orlando-poultry-girlfriend.trycloudflare.com"
+application_url = "https://appliances-chicks-roster-madness.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_product_listings,write_products"
 
 [auth]
 redirect_urls = [
-  "https://buck-orlando-poultry-girlfriend.trycloudflare.com/auth/callback",
-  "https://buck-orlando-poultry-girlfriend.trycloudflare.com/auth/shopify/callback",
-  "https://buck-orlando-poultry-girlfriend.trycloudflare.com/api/auth/callback"
+  "https://appliances-chicks-roster-madness.trycloudflare.com/auth/callback",
+  "https://appliances-chicks-roster-madness.trycloudflare.com/auth/shopify/callback",
+  "https://appliances-chicks-roster-madness.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
