@@ -3,7 +3,7 @@
 client_id = "6a135d72f846586cff7ef3fe0f9b927d"
 name = "remix-testing"
 handle = "remix-testing-3"
-application_url = "https://restrict-being-screens-massive.trycloudflare.com"
+application_url = "https://rome-smith-analyst-bars.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_product_listings,write_products"
 
 [auth]
 redirect_urls = [
-  "https://restrict-being-screens-massive.trycloudflare.com/auth/callback",
-  "https://restrict-being-screens-massive.trycloudflare.com/auth/shopify/callback",
-  "https://restrict-being-screens-massive.trycloudflare.com/api/auth/callback"
+  "https://rome-smith-analyst-bars.trycloudflare.com/auth/callback",
+  "https://rome-smith-analyst-bars.trycloudflare.com/auth/shopify/callback",
+  "https://rome-smith-analyst-bars.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

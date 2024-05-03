@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="benefit">
+    <div class="emoji">🏝️</div>
+    <div class="text-container">
+      <p class="primary-text">Ships Free + Saves</p>
+      <p class="secondary-text">Subscribe and save</p>
+    </div>
+  </div>
+
+  <div class="benefit">
+    <div class="emoji">💵</div>
+    <div class="text-container">
+      <p class="primary-text">Free Shipping</p>
+      <p class="secondary-text">In +50$ orders</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .benefit {
+    height: auto; /* Ajustado para acomodar contenido de texto variable */
+    border: 1px solid #001;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .emoji {
+    padding: 12px;
+    width: 34px;
+    height: 40px;
+    align-self: center;
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+  }
+
+  .primary-text {
+    font-weight: bold; /* Texto primario más destacado */
+    margin: 0; /* Elimina margen predeterminado */
+    font-size: 12px; /* Tamaño de fuente personalizado */
+  }
+
+  .secondary-text {
+    font-size: smaller; /* Texto secundario más pequeño */
+    margin: 0; /* Elimina margen predeterminado */
+    font-size: 8px; /* Tamaño de fuente personalizado */
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Benefits Section",
+  "target": "section",
+  "available_if": "{{ app.metafields.martinAppMetafield.hasPlan }}",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header",
+      "label": "Header Text",
+      "default": "Welcome to Our Store!"
+    }
+  ]
+}
+{% endschema %}
