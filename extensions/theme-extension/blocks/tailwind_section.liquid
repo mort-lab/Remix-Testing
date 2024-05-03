@@ -1,24 +1,38 @@
-<div style="background-color: #000000;  padding: 10px;">
-  <h1 style="color: #4fd">Hola AppMetafieldHasPlan</h1>
+<div class="container">
+  <div class="benefit">Benefit 1</div>
+  <div class="benefit">Benefit 1</div>
+  <div class="benefit">Benefit 1</div>
 </div>
+
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(222.5px, 1fr)); /* Crea columnas de al menos 222.5px de ancho */
+    gap: 10px; /* Espacio entre elementos */
+  }
+
+  .benefit {
+    height: 59.1875px;
+    background-color: #ff2;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px; /* Padding horizontal para asegurar el espacio dentro del elemento */
+  }
+</style>
 
 {% schema %}
 {
-  "name": "Tailwind Section :(",
-  "target": "block",
+  "name": "Benefits Section",
+  "target": "section",
   "available_if": "{{ app.metafields.martinAppMetafield.hasPlan }}",
   "settings": [
     {
       "type": "text",
-      "id": "my_header",
-      "label": "Title Text",
-      "default": "Revolutionary Features"
-    },
-    {
-      "type": "text",
-      "id": "my_description",
-      "label": "Description Text",
-      "default": "Provides advanced features like time tracking, integrating with third party apps calendar / Google drive, creating subtasks."
+      "id": "header",
+      "label": "Header Text",
+      "default": "Welcome to Our Store!"
     }
   ]
 }
