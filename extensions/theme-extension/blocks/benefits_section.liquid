@@ -1,17 +1,17 @@
 <div class="container">
   <div class="benefit">
-    <div class="emoji">🏝️</div>
+    <div class="emoji">{{ block.settings.block1_emoji }}</div>
     <div class="text-container">
-      <p class="primary-text">Ships Free + Saves</p>
-      <p class="secondary-text">Subscribe and save</p>
+      <p class="primary-text">{{ block.settings.block1_primary_text }}</p>
+      <p class="secondary-text">{{ block.settings.block1_secondary_text }}</p>
     </div>
   </div>
 
   <div class="benefit">
-    <div class="emoji">💵</div>
+    <div class="emoji">{{ block.settings.block2_emoji }}</div>
     <div class="text-container">
-      <p class="primary-text">Free Shipping</p>
-      <p class="secondary-text">In +50$ orders</p>
+      <p class="primary-text">{{ block.settings.block2_primary_text }}</p>
+      <p class="secondary-text">{{ block.settings.block2_secondary_text }}</p>
     </div>
   </div>
 </div>
@@ -20,11 +20,11 @@
   .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 8px;
   }
 
   .benefit {
-    height: auto; /* Ajustado para acomodar contenido de texto variable */
+    height: auto;
     border: 1px solid #001;
     border-radius: 5px;
     display: flex;
@@ -34,10 +34,12 @@
   }
 
   .emoji {
-    padding: 12px;
-    width: 34px;
-    height: 40px;
-    align-self: center;
+    padding: 4px;
+    width: auto;
+    height: auto;
+    align: center;
+    justify-content: center;
+    text-size: 4rem;
   }
 
   .text-container {
@@ -67,9 +69,39 @@
   "settings": [
     {
       "type": "text",
-      "id": "header",
-      "label": "Header Text",
-      "default": "Welcome to Our Store!"
+      "id": "block1_primary_text",
+      "label": "First Block Primary Text",
+      "default": "Free Shipping"
+    },
+    {
+      "type": "text",
+      "id": "block1_secondary_text",
+      "label": "First Block Secondary Text",
+      "default": "In +50$ orders"
+    },
+    {
+      "type": "text",
+      "id": "block1_emoji",
+      "label": "First Block Emoji",
+      "default": "💵"
+    },
+    {
+      "type": "text",
+      "id": "block2_primary_text",
+      "label": "Second Block Primary Text",
+      "default": "Free Shipping"
+    },
+    {
+      "type": "text",
+      "id": "block2_secondary_text",
+      "label": "Second Block Secondary Text",
+      "default": "In +50$ orders"
+    },
+    {
+      "type": "text",
+      "id": "block2_emoji",
+      "label": "Second Block Emoji",
+      "default": "💵"
     }
   ]
 }
