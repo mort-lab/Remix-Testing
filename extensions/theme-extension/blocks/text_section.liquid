@@ -1,0 +1,124 @@
+<!-- sections/custom-text-block.liquid -->
+<div
+  class="main-content"
+>
+  <div class="text-content">
+    <h2 class="title" style="color: {{ block.settings.title_color }};">{{ block.settings.title }}</h2>
+  </div>
+  <div class="button-content">
+    <a
+      href="{{ block.settings.button_link }}"
+      class="button"
+    >
+      {{- block.settings.button_text -}}
+    </a>
+  </div>
+</div>
+
+<style>
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 36px;
+    width: 100%;
+    background-color: {{ block.settings.bg_color }};
+    border-radius: {{ block.settings.content_radius }}px;
+  }
+
+  .button-content {
+    margin-top: 20px;
+    martin-bottom: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .button {
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    padding: 18px 18px;
+    border-radius: {{ block.settings.button_radius }}px;
+    text-align: center;
+    display: inline-block;
+    font-size: 18px;
+  }
+
+
+
+  .title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    color: {{ block.settings.title_color }};
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Custom Text Block",
+  "target": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "50% Off all walking essentials"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "View Discounted Essentials"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button Background Color",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "Button Border Radius",
+      "min": 0,
+      "max": 100,
+      "default": 8,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "content_radius",
+      "label": "Content Border Radius",
+      "min": 0,
+      "max": 100,
+      "default": 8,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Text Color",
+      "default": "#121212"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ]
+}
+{% endschema %}
