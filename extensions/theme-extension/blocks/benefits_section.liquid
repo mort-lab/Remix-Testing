@@ -26,7 +26,7 @@
   .benefit {
     height: auto;
     border: 1px solid #001;
-    border-radius: 5px;
+    border-radius: {{ block.settings.benefit_radius }}px;
     display: flex;
     align-items: center;
     padding: 10px;
@@ -102,6 +102,15 @@
       "id": "block2_emoji",
       "label": "Second Block Emoji",
       "default": "💵"
+    },
+    {
+      "type": "range",
+      "id": "benefit_radius",
+      "label": "Benefit Border Radius",
+      "min": 0,
+      "max": 100,
+      "default": 24,
+      "unit": "px"
     }
   ]
 }

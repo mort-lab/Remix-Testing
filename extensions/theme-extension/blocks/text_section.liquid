@@ -16,43 +16,60 @@
 </div>
 
 <style>
-  .main-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 36px;
-    width: 100%;
-    background-color: {{ block.settings.bg_color }};
-    border-radius: {{ block.settings.content_radius }}px;
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 36px;
+      width: 100%;
+      background-color: {{ block.settings.bg_color }};
+      border-radius: {{ block.settings.content_radius }}px;
+    }
+
+    .button-content {
+      margin-top: 20px;
+      martin-bottom: 20px;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .button {
+      background-color: {{ block.settings.button_bg_color }};
+      color: {{ block.settings.button_text_color }};
+      padding: 18px 22px;
+      text-align: center;
+      border-radius: {{ block.settings.button_radius }}px;
+      text-align: center;
+      display: inline-block;
+      font-size: 18px;
+    }
+
+    .button:hover {
+      background-color: darken({{ block.settings.button_bg_color }}, 10%); /* Oscurece el color en hover */
+      border-radius: {{ block.settings.button_radius }}px; /* Asegúrate de que el hover también tenga el border-radius */
   }
 
-  .button-content {
-    margin-top: 20px;
-    martin-bottom: 20px;
-    display: flex;
-    width: 100%;
-    justify-content: center;
+  /* Asegúrate de que los pseudo-elementos :before y :after también respeten el border-radius */
+  .button:before,
+  .button:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: {{ block.settings.button_radius }}px; /* Añade esta línea */
+      transition: border-radius 0.3s; /* Transición suave para el border-radius */
   }
 
-  .button {
-    background-color: {{ block.settings.button_bg_color }};
-    color: {{ block.settings.button_text_color }};
-    padding: 18px 18px;
-    border-radius: {{ block.settings.button_radius }}px;
-    text-align: center;
-    display: inline-block;
-    font-size: 18px;
-  }
-
-
-
-  .title {
-    font-size: 32px;
-    font-weight: bold;
-    text-align: center;
-    color: {{ block.settings.title_color }};
-  }
+    .title {
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+      color: {{ block.settings.title_color }};
+    }
 </style>
 
 {% schema %}
@@ -91,6 +108,12 @@
       "default": "#ffffff"
     },
     {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Text Color",
+      "default": "#121212"
+    },
+    {
       "type": "range",
       "id": "button_radius",
       "label": "Button Border Radius",
@@ -107,12 +130,6 @@
       "max": 100,
       "default": 8,
       "unit": "px"
-    },
-    {
-      "type": "color",
-      "id": "title_color",
-      "label": "Title Text Color",
-      "default": "#121212"
     },
     {
       "type": "url",
