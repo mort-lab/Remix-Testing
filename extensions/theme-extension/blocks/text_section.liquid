@@ -4,6 +4,7 @@
 >
   <div class="text-content">
     <h2 class="title" style="color: {{ block.settings.title_color }};">{{ block.settings.title }}</h2>
+    <p class="paragraph">{{ block.settings.paragraph_text }}</p>
   </div>
   <div class="button-content">
     <a
@@ -72,6 +73,12 @@
       text-align: center;
       color: {{ block.settings.title_color }};
     }
+    .paragraph {
+      font-size: 16px;
+      text-align: center;
+    font-weight: normal;
+
+    }
 </style>
 
 {% schema %}
@@ -84,6 +91,12 @@
       "id": "title",
       "label": "Title",
       "default": "50% Off all walking essentials"
+    },
+    {
+      "type": "text",
+      "id": "paragraph_text",
+      "label": "Paragraph Text",
+      "default": "Meet our team of experts"
     },
     {
       "type": "text",

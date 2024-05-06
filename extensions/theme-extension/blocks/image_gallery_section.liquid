@@ -1,6 +1,7 @@
 <div class="container">
   <div class="text-container">
     <h2 class="title" style="color: {{ block.settings.title_color }};">{{ block.settings.title }}</h2>
+    <p class="paragraph">{{ block.settings.paragraph_text }}</p>
   </div>
   <div class="gallery">
     <div class="img-box" style="background-image: url({{ block.settings.image_with_text_image_1 | img_url: '500x' }});">
@@ -16,33 +17,9 @@
       <h3>Cristiano</h3>
     </div>
   </div>
-
-  <span class="progress-circles">
-    <span class="circle-1"></span>
-  </span>
 </div>
 
 <style>
-  .progress-circles {
-    background-color: #ff3333
-    width: 167px;
-    height: 52px;
-    padding: 20px 28px 20px 28px;
-    min-height: auto;
-    min-width: auto;
-    display: flex;
-  }
-
-  .circle-1 {
-    background-color: #ffff;
-    width: 3px;
-    height: 3px;
-    border-radius: 100%
-    margin-right: 10px;
-  }
-
-
-
   .container {
     width: 100%;
     height: auto; /* Cambio para mejor adaptación en móviles */
@@ -50,7 +27,7 @@
     display: row;
     align-items: center;
     justify-content: center;
-    padding: 10px; /* Agregar algo de padding para no tocar los bordes */
+    padding: 36px; /* Agregar algo de padding para no tocar los bordes */
     border-radius: {{ block.settings.section_radius }}px;
   }
 
@@ -92,6 +69,13 @@
     margin: {{ block.settings.section_margin }}px;
   }
 
+  .paragraph {
+    font-size: 16px;
+    text-align: center;
+    font-weight: normal;
+  }
+
+
   /* Eliminar el :hover de aquí si decides usar JavaScript para móviles */
   @media (hover: hover) {
     .img-box:hover {
@@ -101,6 +85,16 @@
     .img-box:hover h3 {
       opacity: 1;
       bottom: 20px;
+    }
+  }
+
+  {% comment %} hacer que la imagen en la que se hace click en version mobile se active (cambiar height) {% endcomment %}
+
+
+  @media (max-width: 800px) {
+    .img-box {
+      width: 300px;
+      height: 150px;
     }
   }
 
@@ -139,7 +133,7 @@
       "type": "range",
       "id": "section_radius",
       "label": "Border Radius",
-      "default": 10,
+      "default": 24,
       "min": 0,
       "max": 50
     },
@@ -150,6 +144,12 @@
       "default": 16,
       "min": 0,
       "max": 50
+    },
+    {
+      "type": "text",
+      "id": "paragraph_text",
+      "label": "Paragraph Text",
+      "default": "Meet our team of experts"
     },
     {
       "type": "text",
