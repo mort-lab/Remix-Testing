@@ -19,45 +19,57 @@
 <style>
   .container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    gap: 8px; /* Espacio entre columnas y filas */
+    padding: 8px;
+    justify-content: center; /* Centra el contenido en el contenedor */
+    align-items: start; /* Alinea los ítems al inicio para evitar desalineaciones */
   }
 
   .benefit {
-    height: auto;
-    border: 1px solid #001;
+    background-color: {{ block.settings.benefit_color }};
+    border: {{ block.settings.border_thickness }}px solid {{ block.settings.border_color }};
     border-radius: {{ block.settings.benefit_radius }}px;
     display: flex;
     align-items: center;
-    padding: 10px;
+    justify-content: flex-start;
+    padding: 14px 18px;
     box-sizing: border-box;
+    width: 100%; /* Utiliza todo el ancho disponible de la columna */
+    height: 100%;
   }
 
   .emoji {
-    padding: 4px;
-    width: auto;
-    height: auto;
-    align: center;
-    justify-content: center;
-    text-size: 4rem;
+    font-size: 2rem;
+    margin-right: 12px;
   }
 
   .text-container {
     display: flex;
     flex-direction: column;
-    margin-left: 12px;
+    {% comment %} align-items: flex-start; {% endcomment %}
+    justify-content: center;
+  }
+
+  .primary-text, .secondary-text {
+    margin: 0;
   }
 
   .primary-text {
-    font-weight: bold; /* Texto primario más destacado */
-    margin: 0; /* Elimina margen predeterminado */
-    font-size: 12px; /* Tamaño de fuente personalizado */
+    font-weight: bold;
+    font-size: 14px;
+    color: {{ block.settings.primary_text_color }};
   }
 
   .secondary-text {
-    font-size: smaller; /* Texto secundario más pequeño */
-    margin: 0; /* Elimina margen predeterminado */
-    font-size: 8px; /* Tamaño de fuente personalizado */
+    font-size: 12px;
+    color: {{ block.settings.secondary_text_color }};
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
   }
 </style>
 
@@ -111,6 +123,39 @@
       "max": 100,
       "default": 24,
       "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "benefit_color",
+      "label": "Benefit Background Color",
+      "default": "#fff"
+    },
+    {
+      "type": "range",
+      "id": "border_thickness",
+      "label": "Border Thickness",
+      "min": 0,
+      "max": 10,
+      "default": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "primary_text_color",
+      "label": "Primary Text Color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "secondary_text_color",
+      "label": "Secondary Text Color",
+      "default": "#000"
     }
   ]
 }
