@@ -4,131 +4,178 @@
     <p class="paragraph">{{ block.settings.paragraph_text }}</p>
   </div>
   <div class="gallery">
-    <div
-      class="img-box"
-      style="background-image: url({{ block.settings.image_with_text_image_1 | image_url: '500x' }});"
-    >
+    <div class="img-box" style="background-image: url({{ block.settings.image_with_text_image_1 | img_url: '500x' }});">
       <h3>Madison</h3>
     </div>
-    <div
-      class="img-box"
-      style="background-image: url({{ block.settings.image_with_text_image_2 | image_url: '500x' }});"
-    >
+    <div class="img-box" style="background-image: url({{ block.settings.image_with_text_image_2 | img_url: '500x' }});">
       <h3>Martin</h3>
     </div>
-    <div
-      class="img-box"
-      style="background-image: url({{ block.settings.image_with_text_image_3 | image_url: '500x' }});"
-    >
+    <div class="img-box" style="background-image: url({{ block.settings.image_with_text_image_3 | img_url: '500x' }});">
       <h3>Jose</h3>
     </div>
-    <div
-      class="img-box"
-      style="background-image: url({{ block.settings.image_with_text_image_4 | image_url: '500x' }});"
-    >
+    <div class="img-box" style="background-image: url({{ block.settings.image_with_text_image_4 | img_url: '500x' }});">
       <h3>Cristiano</h3>
     </div>
+  </div>
+  <div class="button-content">
+    <a
+      href="{{ block.settings.button_link }}"
+      class="button"
+    >
+      {{- block.settings.button_text -}}
+    </a>
   </div>
 </div>
 
 <style>
-  .container {
-    width: 100%;
-    height: auto; /* Cambio para mejor adaptación en móviles */
-    background-color: {{ block.settings.section_bg_color }};
-    display: row;
-    align-items: center;
-    justify-content: center;
-    padding: 36px; /* Agregar algo de padding para no tocar los bordes */
-    border-radius: {{ block.settings.section_radius }}px;
-  }
-
-  .gallery {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 100%; /* Asegurar que la galería no sobrepase el ancho del contenedor */
-  }
-  .img-box {
-    width: 150px;
-    height: 300px;
-    margin: 10px;
-    border-radius: 50px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    transition: all 0.5s ease;
-  }
-
-  .img-box h3 {
-    color: #fff;
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    opacity: 0;
-    transition: opacity 0.5s, bottom 0.5s;
-  }
-
-  .text-container {
-    font-size: 32px;
-    font-weight: bold;
-    text-align: center;
-    color: {{ block.settings.title_color }};
-
-  }
-  .text-container h2 {
-    margin: {{ block.settings.section_margin }}px;
-  }
-
-  .paragraph {
-    font-size: 16px;
-    text-align: center;
-    font-weight: normal;
-  }
-
-
-  /* Eliminar el :hover de aquí si decides usar JavaScript para móviles */
-  @media (hover: hover) {
-    .img-box:hover {
-      width: 400px; /* Esto puede ser demasiado grande para algunos contenedores */
+    .container {
+      width: 100%;
+      height: auto; /* Cambio para mejor adaptación en móviles */
+      background-color: {{ block.settings.section_bg_color }};
+      display: row;
+      align-items: center;
+      justify-content: center;
+      padding: 36px; /* Agregar algo de padding para no tocar los bordes */
+      border-radius: {{ block.settings.section_radius }}px;
     }
 
-    .img-box:hover h3 {
-      opacity: 1;
-      bottom: 20px;
+    .gallery {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100%; /* Asegurar que la galería no sobrepase el ancho del contenedor */
     }
-  }
-
-  {% comment %} hacer que la imagen en la que se hace click en version mobile se active (cambiar height) {% endcomment %}
-
-
-  @media (max-width: 800px) {
     .img-box {
-      width: 300px;
-      height: 150px;
+      width: 150px;
+      height: 450px;
+      margin: 10px;
+      border-radius: 18px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      transition: all 0.5s ease;
     }
-  }
 
-  .img-box.expanded {
-    width: 400px; /* Expande la caja cuando está activa */
+    .img-box h3 {
+      color: #fff;
+      position: absolute;
+      bottom: 18px;
+      left: 18px;
+      opacity: 0;
+      transition: opacity 0.5s, bottom 0.5s;
+    }
+
+    .text-container {
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+      color: {{ block.settings.title_color }};
+
+    }
+    .text-container h2 {
+      margin: {{ block.settings.section_margin }}px;
+    }
+
+    .paragraph {
+      font-size: 16px;
+      text-align: center;
+      font-weight: normal;
+    }
+
+    @media (hover: hover) {
+      .img-box:hover {
+        width: 40%;
+      }
+
+      .img-box:hover h3 {
+        opacity: 1;
+        bottom: 20px;
+      }
+    }
+
+    @media (max-width: 600px) and (hover: hover) {
+      .img-box {
+        width: 300px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .img-box:hover {
+        width: 350px;
+        height: 400px;
+      }
+    }
+
+    @media (min-width: 200px) and (max-width: 600px) {
+      .img-box {
+        width: 300px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    {% comment %} .img-box.expanded {
+      width: 400px; /* Expande la caja cuando está activa */
+    } {% endcomment %}
+
+    .button-content {
+      margin-top: 28px;
+      martin-bottom: 20px;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .button {
+      background-color: {{ block.settings.button_bg_color }};
+      color: {{ block.settings.button_text_color }};
+      padding: 18px 22px;
+      text-align: center;
+      border-radius: {{ block.settings.button_radius }}px;
+      text-align: center;
+      display: inline-block;
+      font-size: 18px;
+    }
+
+    .button:hover {
+      background-color: darken({{ block.settings.button_bg_color }}, 10%); /* Oscurece el color en hover */
+      border-radius: {{ block.settings.button_radius }}px; /* Asegúrate de que el hover también tenga el border-radius */
+    }
+
+  /* Asegúrate de que los pseudo-elementos :before y :after también respeten el border-radius */
+  .button:before,
+  .button:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: {{ block.settings.button_radius }}px; /* Añade esta línea */
+      transition: border-radius 0.3s; /* Transición suave para el border-radius */
   }
 </style>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const boxes = document.querySelectorAll('.img-box');
+{% comment %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const boxes = document.querySelectorAll('.img-box');
 
-    boxes.forEach((box) => {
-      box.addEventListener('click', function () {
-        // Toggle class to expand or collapse the box
-        this.classList.toggle('expanded');
-        this.querySelector('h3').style.opacity = this.classList.contains('expanded') ? '1' : '0';
-        this.querySelector('h3').style.bottom = this.classList.contains('expanded') ? '20px' : '10px';
+      boxes.forEach((box) => {
+        box.addEventListener('click', function () {
+          // Toggle class to expand or collapse the box
+          this.classList.toggle('expanded');
+          this.querySelector('h3').style.opacity = this.classList.contains('expanded') ? '1' : '0';
+          this.querySelector('h3').style.bottom = this.classList.contains('expanded') ? '20px' : '10px';
+        });
       });
     });
-  });
-</script>
+  </script>
+{% endcomment %}
 
 {% schema %}
 {
@@ -174,6 +221,38 @@
       "id": "title_color",
       "label": "Title Color",
       "default": "#121212"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "View Discounted Essentials"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button Background Color",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "Button Border Radius",
+      "min": 0,
+      "max": 100,
+      "default": 8,
+      "unit": "px"
     },
     {
       "type": "image_picker",
