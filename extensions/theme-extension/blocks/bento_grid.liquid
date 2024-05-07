@@ -1,0 +1,120 @@
+<div id="bentoGrid" class="bento-grid">
+  <!-- Ejemplo de tarjeta Bento -->
+  <div class="bento-card">
+    <div class="card-background"></div>
+    <div class="card-content">
+      <svg class="icon">
+        <!-- Icon SVG content here -->
+      </svg>
+      <h3>Titulo de la tarjeta</h3>
+      <p>Descripción breve de la tarjeta.</p>
+    </div>
+    <div class="card-footer">
+      <a href="#" class="btn">Aprende más</a>
+    </div>
+  </div>
+  <div class="bento-card">
+    <div class="card-background"></div>
+    <div class="card-content">
+      <svg class="icon">
+        <!-- Icon SVG content here -->
+      </svg>
+      <h3>Titulo de la tarjeta</h3>
+      <p>Descripción breve de la tarjeta.</p>
+    </div>
+    <div class="card-footer">
+      <a href="#" class="btn">Aprende más</a>
+    </div>
+  </div>
+  <div class="bento-card">
+    <div class="card-background"></div>
+    <div class="card-content">
+      <svg class="icon">
+        <!-- Icon SVG content here -->
+      </svg>
+      <h3>Titulo de la tarjeta</h3>
+      <p>Descripción breve de la tarjeta.</p>
+    </div>
+    <div class="card-footer">
+      <a href="#" class="btn">Aprende más</a>
+    </div>
+  </div>
+  <div class="bento-card">
+    <div class="card-background"></div>
+    <div class="card-content">
+      <svg class="icon">
+        <!-- Icon SVG content here -->
+      </svg>
+      <h3>Titulo de la tarjeta</h3>
+      <p>Descripción breve de la tarjeta.</p>
+    </div>
+    <div class="card-footer">
+      <a href="#" class="btn">Aprende más</a>
+    </div>
+  </div>
+  <!-- Repetir bloques similares para cada tarjeta -->
+</div>
+
+<style>
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .bento-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .card-background {
+    height: 150px; /* Adjustable based on content */
+    background-image: url('your-image-url.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .card-content {
+    padding: 15px;
+  }
+
+  .card-footer {
+    padding: 10px;
+    text-align: right;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var buttons = document.querySelectorAll('.btn');
+
+    buttons.forEach(function (button) {
+      button.addEventListener('click', function (event) {
+        alert('Botón clickeado!');
+      });
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "Bento Grid",
+  "target": "section",
+  "settings": []
+}
+{% endschema %}

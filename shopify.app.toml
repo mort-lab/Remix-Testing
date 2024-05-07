@@ -3,7 +3,7 @@
 client_id = "6a135d72f846586cff7ef3fe0f9b927d"
 name = "remix-testing"
 handle = "remix-testing-3"
-application_url = "https://chest-charms-faces-seasons.trycloudflare.com"
+application_url = "https://superior-quebec-mattress-approx.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_product_listings,write_products"
 
 [auth]
 redirect_urls = [
-  "https://chest-charms-faces-seasons.trycloudflare.com/auth/callback",
-  "https://chest-charms-faces-seasons.trycloudflare.com/auth/shopify/callback",
-  "https://chest-charms-faces-seasons.trycloudflare.com/api/auth/callback"
+  "https://superior-quebec-mattress-approx.trycloudflare.com/auth/callback",
+  "https://superior-quebec-mattress-approx.trycloudflare.com/auth/shopify/callback",
+  "https://superior-quebec-mattress-approx.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
