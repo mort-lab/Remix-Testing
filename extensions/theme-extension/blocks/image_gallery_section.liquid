@@ -94,7 +94,7 @@
       }
     }
 
-    @media (max-width: 600px) and (hover: hover) {
+    @media (max-width: 1074px) and (hover: hover) {
       .img-box {
         width: 300px;
         height: 200px;
@@ -102,10 +102,10 @@
         align-items: center;
         justify-content: center;
       }
-      .img-box:hover {
+      {% comment %} .img-box:hover {
         width: 350px;
         height: 400px;
-      }
+      } {% endcomment %}
     }
 
     @media (min-width: 200px) and (max-width: 600px) {
@@ -115,6 +115,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
+      }
+      .button {
+        width: 80%;
+
       }
     }
 
@@ -180,6 +184,7 @@
 {% schema %}
 {
   "name": "Image Gallery Section",
+  "class": "dynamic-gallery",
   "target": "section",
   "settings": [
     {
